@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body> 
+
+        <h1>Ucitat cemo neki sadrzaj bez da osvjezavamo kompletan sajt</h1>
+        <button type="button" onclick="loadSadrzajTxt()">AJAX button</button>
+        <div id="sadrzajDiv"></div>
+        <script>
+            function loadSadrzajTxt() {
+                console.log("Poziv");
+                var xhttp = new XMLHttpRequest();
+                console.log(xhttp);
+                xhttp.onreadystatechange = function () {
+                    //0 -> request nije inic
+                    //1 -> uspostavili konekciju sa serverom
+                    //2 -> zahtjev primljen
+                    //3 -> zahtjev procesira
+                    //4 -> zahtjev dovrsen i spreman response
+                    if (this.readyState === 4 && this.status === 200) {
+                        console.log(this.responseText + " <----------");
+                        document.getElementById("sadrzajDiv").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "sadrzaj.txt", true);
+                xhttp.send();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,2 @@
+Ovo je nas sadrzaj koji se nalazi unutar fajla koji se zove sadrzaj.txt.
+Ovaj fajl se nalazi na GlassFish 4.1.1 serveru.

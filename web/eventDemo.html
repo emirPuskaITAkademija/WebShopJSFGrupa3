@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo of events</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="nasDiv" onmouseover="onMouseOverFun(this)" onmouseout="onMouseOutFun(this)" style="background-color: red;width: 120px;height: 20px; padding: 40px;">Misem preko mene</div>
+        <script>
+            function onMouseOverFun(obj) {
+                obj.innerHTML = "Presao si preko mene";
+            }
+            function onMouseOutFun(obj) {
+                obj.innerHTML = "Hvala ti ziv bio sto si se skinuo meni s grbace";
+            }
+        </script>
+    </body>
+</html>

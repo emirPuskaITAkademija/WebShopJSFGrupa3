@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiple listeners</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>We will add multiple listeners</h2>
+        <p>Our example will show us how to add multiple listeners on the same button</p>
+        <button id="ourButton">Try to click me</button>
+        <p id="buttonParagraph"></p>
+        <script>
+            var varButton = document.getElementById("ourButton");
+            varButton.addEventListener("mouseover", mouseOverFunction);
+            varButton.addEventListener("click", onClickFunction);
+            varButton.addEventListener("mouseout", onMouseOutFunction);
+
+
+            function mouseOverFunction() {
+                document.getElementById("buttonParagraph").innerHTML += "Mouse over!<br>";
+            }
+
+            function onClickFunction() {
+                document.getElementById("buttonParagraph").innerHTML += "Mouse CLICKED!<br>";
+            }
+
+            function onMouseOutFunction() {
+                document.getElementById("buttonParagraph").innerHTML += "Mouse out!<br>";
+
+            }
+        </script>
+    </body>
+</html>

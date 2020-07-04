@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demonstracija validacije brojeva</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Hej, unesi neki broj i klikni 'Posalji'</p>
+        <input id="numberInput" type="number" min="1" max="10" required>
+        <button onclick="getMessage()">Posalji</button>
+        <p id="validationMessageParagraph">Ukoliko je broj veci ili jednak 1 ili manji ili jednak od 10 onda je sve u redu</p>
+        <script>
+            function getMessage(){
+                var korisnickiUnos = document.getElementById("numberInput");
+                if(!korisnickiUnos.checkValidity()){
+                    document.getElementById("validationMessageParagraph").innerHTML = korisnickiUnos.validationMessage;
+                }else{
+                    document.getElementById("validationMessageParagraph").innerHTML="Input je ok";
+                }
+            }
+        </script>
+    </body>
+</html>

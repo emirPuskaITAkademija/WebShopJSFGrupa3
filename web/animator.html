@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Our animation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #velikaKutija{
+                width: 450px;
+                height: 450px;
+                position: relative;
+                background: yellow;
+            }
+            #malaKutija{
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Animation test</h3>
+        <div id="velikaKutija">
+            <div id="malaKutija"></div>
+        </div>
+        <button onclick="moveYourself()">Pokreni animaciju</button>
+        <br/>
+        <h3 onclick="this.innerHTML='Hej kliknu bolan NA ME'">Uradi klik da vidis sta ce se desiti</h3>
+        <script>
+            function moveYourself(){
+                var malaKutija = document.getElementById("malaKutija");
+                var position = 0;
+                var intervalId = setInterval(start, 15);
+                function start(){
+                    if(position === 400){
+                        clearInterval(intervalId);
+                    }else{
+                        position++;
+                        malaKutija.style.top = position+"px";
+                        malaKutija.style.left = position+"px";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
