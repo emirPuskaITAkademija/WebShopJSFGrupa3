@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id")
     , @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username")
     , @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")
+    , @NamedQuery(name = "User.findByUsernamePassword", query = "SELECT u FROM User u WHERE u.username = :username AND u.password = :password")
     , @NamedQuery(name = "User.findByName", query = "SELECT u FROM User u WHERE u.name = :name")
     , @NamedQuery(name = "User.findBySurname", query = "SELECT u FROM User u WHERE u.surname = :surname")})
 public class User implements Serializable {
@@ -147,5 +148,5 @@ public class User implements Serializable {
     public String toString() {
         return "shop.business.model.User[ id=" + id + " ]";
     }
-    
+
 }

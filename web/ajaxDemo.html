@@ -13,7 +13,7 @@
         <script>
             function loadSadrzajTxt() {
                 console.log("Poziv");
-                var xhttp = new XMLHttpRequest();
+                var xhttp = new XMLHttpRequest();//ActiveXObject
                 console.log(xhttp);
                 xhttp.onreadystatechange = function () {
                     //0 -> request nije inic

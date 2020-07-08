@@ -1,19 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package shop.business;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import shop.business.model.User;
 
-/**
- *
- * @author grupa 1
- */
 @Stateless
 public class LoginSessionBean implements LoginSessionBeanLocal {
+    
+    @PersistenceContext(unitName = "WebShopGrupa3FinalVersionPU")
+    private EntityManager entityManager;
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @Override
+    public User login(String username, String password) {
+        try{
+            return (User) entityManager.createNamedQuery("User.findByUsernamePassword")
+                    .setParameter("username", username)
+                    .setParameter("password", password)
+                    .getSingleResult();
+        }catch(Exception exception){
+            exception.printStackTrace();
+            return null;
+        }
+    }
+
+   
 }
